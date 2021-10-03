@@ -80,3 +80,11 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKERHUB_ID }}/1003:test-ver1
+
+    - name: Build images & push to GCR
+      uses: carbonchain/action-container-registry@v1.1
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        dockerfile: ./dockerfile
+        image: gcr.io/${{ secrets.GCP_PROJECT_ID }}/1003:test-ver1
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
