@@ -74,12 +74,12 @@ jobs:
           COPY ./my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
           EXPOSE 8080
           EOF
-    - name: Build images & push to DockerHub
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKERHUB_ID }}/cicd_pipeline:latest
+#    - name: Build images & push to DockerHub
+#      uses: docker/build-push-action@v2
+#      with:
+#        context: .
+#        push: true
+#        tags: ${{ secrets.DOCKERHUB_ID }}/cicd_pipeline:latest
 
     - name: Build images & push to GCR
       uses: carbonchain/action-container-registry@v1.1
