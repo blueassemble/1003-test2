@@ -105,8 +105,8 @@ jobs:
 
     - name: Deploy-Restart
       run: |
-        kubectl rollout restart deployment tomcat
-        kubectl rollout restart deployment nginx
+        kubectl rollout restart deployment tomcat -n dev
+        kubectl rollout restart deployment nginx -n dev
 
     - name: Get-all
       run: kubectl get all
