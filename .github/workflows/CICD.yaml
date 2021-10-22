@@ -109,4 +109,4 @@ jobs:
         kubectl rollout restart deployment nginx -n dev
 
     - name: Get-all
-      run: kubectl get all
+      run: kubectl get all -n dev
